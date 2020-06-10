@@ -20,11 +20,6 @@ class CashModel{
       amount: parsedJson["amount"],
       currencyAmount: parsedJson["currencyAmount"],
       comment: parsedJson["comment"],
-
     );
-
   }
-
-
-
 }
