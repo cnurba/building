@@ -9,6 +9,7 @@ class UnFreeFlatModel {
    String buyer;
    String amount;
    String agent;
+
    UnFreeFlatModel({
       this.house,
       this.floor,
