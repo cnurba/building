@@ -1,0 +1,8 @@
+
+class Settings {
+
+  String organization;
+
+
+
+}
