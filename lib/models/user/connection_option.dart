@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 class ConnectionOption {
   String login;
   String password;
@@ -10,24 +8,14 @@ class ConnectionOption {
 
   ConnectionOption({this.login, this.password, this.ip, this.http, this.port});
 
-  factory ConnectionOption.fromJson(){
-    return null;
+  factory ConnectionOption.fromJson(Map<String,dynamic> parsedJson){
+    return new ConnectionOption(
+      password: parsedJson["password"],
+    );
   }
-
-//  factory CashModel.FromJon (Map<String,dynamic> parsedJson){
-//
-//    return new CashModel(
-//      organization: parsedJson["organization"],
-//      account: parsedJson["account"],
-//      subconto: parsedJson["subconto"],
-//      amount: parsedJson["amount"],
-//      currencyAmount: parsedJson["currencyAmount"],
-//      comment: parsedJson["comment"],
-//
-//    );
-
-  }
-
 
 }
+
+
+
 
