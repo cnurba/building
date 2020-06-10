@@ -1,8 +1,6 @@
 import 'package:building/ui/registration/registration_page.dart';
 import 'package:flutter/material.dart';
 
-import 'home_view.dart';
-
 void main() {
   runApp(MyApp());
 }
