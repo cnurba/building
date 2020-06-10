@@ -78,6 +78,11 @@ class RegistrationPage extends StatelessWidget {
                     child: Text("Выйти"),
                     color: Colors.brown,
                   ),
+
+                  RaisedButton(
+                    child: Text("Демо"),
+                    color: Colors.brown,
+                  ),
                 ],
               )
             ],
