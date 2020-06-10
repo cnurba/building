@@ -1,4 +1,4 @@
-class CashModel{
+class StatmentDetailModel{
 
   String account;
   String organization;
@@ -7,13 +7,13 @@ class CashModel{
   String currencyAmount;
   String comment;
 
-  CashModel({this.account, this.organization, this.subconto, this.amount,
+  StatmentDetailModel({this.account, this.organization, this.subconto, this.amount,
       this.currencyAmount, this.comment});
 
 
-  factory CashModel.FromJon (Map<String,dynamic> parsedJson){
+  factory StatmentDetailModel.FromJon (Map<String,dynamic> parsedJson){
 
-    return new CashModel(
+    return new StatmentDetailModel(
       organization: parsedJson["organization"],
       account: parsedJson["account"],
       subconto: parsedJson["subconto"],

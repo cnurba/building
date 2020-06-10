@@ -1,4 +1,4 @@
-class DirectorModel {
+class StatmentModel {
   String name;
   String organization;
   String id;
@@ -6,12 +6,11 @@ class DirectorModel {
   String flag;
   String comment;
 
-
-  DirectorModel({this.name, this.organization, this.id, this.amount, this.flag,
+  StatmentModel({this.name, this.organization, this.id, this.amount, this.flag,
       this.comment});
 
-  factory DirectorModel.fromJson(Map<String, dynamic> parsedJson) {
-    return DirectorModel(
+  factory StatmentModel.fromJson(Map<String, dynamic> parsedJson) {
+    return StatmentModel(
         name: parsedJson["name"],
         amount: parsedJson['amount'],
         comment: parsedJson['comment'],
@@ -21,9 +20,8 @@ class DirectorModel {
   }
 
   Map<String, dynamic> toJson() =>
-      {
+   {
         'flag': flag,
         'id': id,
-      };
-
+   };
 }

@@ -23,24 +23,19 @@ class HouseModel {
     );
 
   }
-
   Map<String, dynamic> toJsonFreeFlats() =>
       {
         'status': "free",
         'id': id,
       };
-
-
   Map<String, dynamic> toJsonUnFreeFlats() =>
       {
         'status': "unfree",
         'id': id,
       };
-
   Map<String, dynamic> toJsonBookedFlats() =>
       {
         'status': "booked",
         'id': id,
       };
-
 }
