@@ -5,7 +5,7 @@ class ClipperWidget extends CustomClipper<Path>{
   getClip(Size size) {
     final Path path = Path();
     path.lineTo(0.0, size.height);
-    path.lineTo(size.width, size.height-30);
+    path.lineTo(size.width, size.height-40);
     path.lineTo(size.width, 0.0);
     path.close();
     return path;

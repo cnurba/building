@@ -6,13 +6,15 @@ class TextFieldWidget extends StatelessWidget {
   final IconData prefixIconData;
   final bool obscureText;
   final Function onChanged;
+  final TextEditingController controller;
   TextFieldWidget({
-      this.hintText, this.prefixIconData, this.obscureText, this.onChanged});
+      this.hintText, this.prefixIconData, this.obscureText, this.onChanged, this.controller});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-    // onChanged: onChanged,
+      onChanged: onChanged(),
+      controller: controller,
       obscureText: obscureText,
       decoration: InputDecoration(
         hintText: hintText,

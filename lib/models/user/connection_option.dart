@@ -10,6 +10,11 @@ class ConnectionOption {
   factory ConnectionOption.fromJson(Map<String,dynamic> parsedJson){
     return new ConnectionOption(
       password: parsedJson["password"],
+      login: parsedJson["login"],
+      http: parsedJson["http"],
+      ip: parsedJson["ip"],
+      port: parsedJson["port"],
+
     );
   }
 
