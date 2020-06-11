@@ -18,6 +18,14 @@ class ConnectionOption {
     );
   }
 
+  Map<String,dynamic> toJson() =>{
+    "login":login,
+    "password":password,
+    "ip":ip,
+    "http":http,
+    "port":port,
+  };
+
 }
 
 

@@ -9,9 +9,21 @@ class ConnectBloc extends Bloc<ConnectEvent, ConnectState> {
   @override
   Stream<ConnectState> mapEventToState(ConnectEvent event) async* {
 
+    if(event is CheckConnectEvent){
 
+
+    }else if (event is DemoConnectEvent){
+
+    }else if (event is LoggedInEvent){
+
+    }else if(event is AppStartedEvent){
+
+    }else{
+
+
+
+    }
 
   }
-
 
 }

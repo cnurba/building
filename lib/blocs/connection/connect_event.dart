@@ -9,29 +9,36 @@ abstract class ConnectEvent extends Equatable {
   }
 }
 
-class AppStarted extends ConnectEvent {
+class AppStartedEvent extends ConnectEvent {
    @override
   String toString() {
     return "Приложение запущено";
   }
 }
 
-class LoggedIn extends ConnectEvent {
+class LoggedInEvent extends ConnectEvent {
   final ConnectionOption connectionOption;
   final User user;
-  LoggedIn({this.user, this.connectionOption});
+  LoggedInEvent({this.user, this.connectionOption});
   @override
   String toString() {
     return "Пользователь ${connectionOption.login} вошел";
   }
 }
 
-class CheckConnect extends ConnectEvent {
+class CheckConnectEvent extends ConnectEvent {
   final ConnectionOption connectionOption;
-  CheckConnect({this.connectionOption});
+  CheckConnectEvent({this.connectionOption});
   @override
   String toString() {
     return "Проверка ${connectionOption.http} соединения";
+  }
+}
+
+class DemoConnectEvent extends ConnectEvent {
+   @override
+  String toString() {
+    return "Демо соединения";
   }
 }
 
