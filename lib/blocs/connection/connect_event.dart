@@ -18,7 +18,6 @@ class AppStarted extends ConnectEvent {
 class LoggedIn extends ConnectEvent {
   final ConnectionOption connectionOption;
   LoggedIn({this.connectionOption});
-
   @override
   String toString() {
     return "Пользователь ${connectionOption.login} вошел";
