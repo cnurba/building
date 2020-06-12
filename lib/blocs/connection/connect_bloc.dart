@@ -14,6 +14,7 @@ class ConnectBloc extends Bloc<ConnectEvent, ConnectState> {
 
     }else if (event is DemoConnectEvent){
 
+
     }else if (event is LoggedInEvent){
 
     }else if(event is AppStartedEvent){

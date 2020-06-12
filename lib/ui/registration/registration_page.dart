@@ -41,88 +41,90 @@ class _RegistrationPageState extends State<RegistrationPage> {
     final bool keyboardOpen = MediaQuery.of(context).viewInsets.bottom > 0;
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            ClipPath(
-              clipper: ClipperWidget(),
-              child: Container(
-                color: Colors.brown,
-                width: double.infinity,
-                height: size.height / 4 - 10,
-                child: Center(
-                    child: Text(
-                  "Добро пожаловать",
-                  style: TextStyle(color: Colors.white, fontSize: 18.0),
-                )),
+        child: Form(
+           child: Column(
+            children: <Widget>[
+              ClipPath(
+                clipper: ClipperWidget(),
+                child: Container(
+                  color: Colors.brown,
+                  width: double.infinity,
+                  height: size.height / 4 - 10,
+                  child: Center(
+                      child: Text(
+                    "Добро пожаловать",
+                    style: TextStyle(color: Colors.white, fontSize: 18.0),
+                  )),
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
+              Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Text("Параметры подключения"),
+                    SizedBox(
+                      height: 12.0,
+                    ),
+                    TextFieldWidget(
+                      controller: loginController,
+                      onChanged: () {},
+                      obscureText: false,
+                      hintText: "user",
+                      prefixIconData: Icons.person,
+                    ),
+                    TextFieldWidget(
+                      controller:passwordController ,
+                      onChanged: () {},
+                      obscureText: true,
+                      hintText: "password",
+                      prefixIconData: Icons.lock,
+                    ),
+                    TextFieldWidget(
+                      controller:ipController ,
+                      onChanged: () {},
+                      obscureText: false,
+                      hintText: "ip",
+                      prefixIconData: Icons.adjust,
+                    ),
+                    TextFieldWidget(
+                      controller:httpController ,
+                      onChanged: () {},
+                      obscureText: false,
+                      hintText: "http",
+                      prefixIconData: Icons.http,
+                    ),
+                    TextFieldWidget(
+                      controller:portController ,
+                      onChanged: () {},
+                      obscureText: false,
+                      hintText: "port",
+                      prefixIconData: Icons.pie_chart_outlined,
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  Text("Параметры подключения"),
-                  SizedBox(
-                    height: 12.0,
+                  RaisedButton(
+                    onPressed: () {
+                      connectBloc.add(DemoConnectEvent());
+                    },
+                    child: Text("Демо"),
+                    color: Colors.brown,
                   ),
-                  TextFieldWidget(
-                    controller: loginController,
-                    onChanged: () {},
-                    obscureText: false,
-                    hintText: "user",
-                    prefixIconData: Icons.person,
-                  ),
-                  TextFieldWidget(
-                    controller:passwordController ,
-                    onChanged: () {},
-                    obscureText: true,
-                    hintText: "password",
-                    prefixIconData: Icons.lock,
-                  ),
-                  TextFieldWidget(
-                    controller:ipController ,
-                    onChanged: () {},
-                    obscureText: false,
-                    hintText: "ip",
-                    prefixIconData: Icons.adjust,
-                  ),
-                  TextFieldWidget(
-                    controller:httpController ,
-                    onChanged: () {},
-                    obscureText: false,
-                    hintText: "http",
-                    prefixIconData: Icons.http,
-                  ),
-                  TextFieldWidget(
-                    controller:portController ,
-                    onChanged: () {},
-                    obscureText: false,
-                    hintText: "port",
-                    prefixIconData: Icons.pie_chart_outlined,
+                  RaisedButton(
+                    onPressed: () {
+                      connectBloc.add(CheckConnectEvent());
+                    },
+                    child: Text("Далее"),
+                    color: Colors.brown,
                   ),
                 ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                RaisedButton(
-                  onPressed: () {
-                    connectBloc.add(DemoConnectEvent());
-                  },
-                  child: Text("Демо"),
-                  color: Colors.brown,
-                ),
-                RaisedButton(
-                  onPressed: () {
-                    connectBloc.add(CheckConnectEvent());
-                  },
-                  child: Text("Далее"),
-                  color: Colors.brown,
-                ),
-              ],
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
       //],
