@@ -1,4 +1,3 @@
-
 import 'package:building/util/enums.dart';
 
 class Settings {
@@ -11,6 +10,15 @@ class Settings {
 
   Settings({this.themeMode,this.demo, this.showReports, this.showHouses,
     this.showTasks,this.showDebtOnSchedule});
+
+  static Settings getDemoSettings() {
+    return new Settings(demo: true,showDebtOnSchedule: true,
+    showHouses: true,
+    showReports: true,
+    showTasks: true,
+    themeMode: ThemeMode.lightTheme,
+    );
+  }
 
 
  static List<String> getDrawerMenuList(){

@@ -1,6 +1,8 @@
 import 'package:building/blocs/connection/connect_bloc.dart';
 import 'package:building/blocs/connection/connect_event.dart';
 import 'package:building/models/user/connection_option.dart';
+import 'package:building/models/user/settings.dart';
+import 'package:building/ui/main_menu.dart';
 import 'package:building/ui/registration/login_page.dart';
 import 'package:building/ui/registration/reg_widgets/clipper_widget.dart';
 import 'package:building/ui/registration/reg_widgets/text_field_widget.dart';
@@ -110,6 +112,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   RaisedButton(
                     onPressed: () {
                       connectBloc.add(DemoConnectEvent());
+
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => MainMenuPage(settings: Settings.getDemoSettings(),),
+                      ));
                     },
                     child: Text("Демо"),
                     color: Colors.brown,
