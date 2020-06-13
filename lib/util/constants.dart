@@ -8,4 +8,10 @@ class CONSTANTS{
   static const Color mainBtnColor4       = Color(0XFFEE5858);
   static const Color mainBtnColor5       = Color(0XFFCD57EF);
   static const Color mainBackgroundColor = Color(0XFF7C72FF);
+  static const Color mainWhiteColor      = Colors.white;
+
+
+  static const String logoPath = 'assets/images/logo.png';
+  static const String defaultImagePath = 'assets/images/default.png';
+
 }
