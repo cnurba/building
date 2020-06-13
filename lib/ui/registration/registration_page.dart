@@ -38,7 +38,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
   @override
   Widget build(BuildContext context) {
     final connectBloc = BlocProvider.of<ConnectBloc>(context);
-
     final size = MediaQuery.of(context).size;
     final bool keyboardOpen = MediaQuery.of(context).viewInsets.bottom > 0;
     return Scaffold(
@@ -51,7 +50,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 child: Container(
                   color: Colors.brown,
                   width: double.infinity,
-                  height: size.height / 4 - 10,
+                  height: size.height / 4 - 30,
                   child: Center(
                       child: Text(
                     "Добро пожаловать",
