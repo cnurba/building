@@ -3,3 +3,12 @@ enum ThemeMode{
   lightTheme,
 }
 
+enum TypeOfMainMenu{
+  report,
+  home,
+  task,
+  debtOnSchedule,
+  settings,
+  connection,
+}
+

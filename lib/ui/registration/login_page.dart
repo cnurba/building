@@ -6,7 +6,6 @@ class LoginPage extends StatelessWidget {
   const LoginPage({Key key, this.connectionOption}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-
     return Form(
       child: Column(
         children: <Widget>[

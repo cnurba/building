@@ -1,4 +1,5 @@
 import 'package:building/blocs/connection/connect_bloc.dart';
+import 'package:building/blocs/menu/menu_bloc.dart';
 import 'package:building/ui/start_page.dart';
 import 'package:building/util/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ void main() {
   runApp(MultiBlocProvider(
       providers: [
         BlocProvider<ConnectBloc>(create: (context) => ConnectBloc(),),
+        BlocProvider<MenuBloc>(create: (context) => MenuBloc(),),
       ],
       child: MyApp()));
 }

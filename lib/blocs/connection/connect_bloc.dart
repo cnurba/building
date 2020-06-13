@@ -6,7 +6,6 @@ import 'connect_state.dart';
 class ConnectBloc extends Bloc<ConnectEvent, ConnectState> {
   @override
   ConnectState get initialState => ConnectUninitialized();
-
   @override
   Stream<ConnectState> mapEventToState(ConnectEvent event) async* {
     if (event is CheckConnectEvent) {
