@@ -6,10 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class MenuBloc extends Bloc<MenuEvent,MenuState>{
   @override
   MenuState get initialState => LoadingMenuState();
-
   @override
   Stream<MenuState> mapEventToState(MenuEvent event) async*{
-
     if(event is MenuClickedEvent){
      if(event.demo){
        final MenuState currentState = getDemoDate(event.typeOfMainMenu);

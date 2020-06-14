@@ -3,6 +3,8 @@ import 'package:building/blocs/connection/connect_state.dart';
 import 'package:building/blocs/menu/menu_bloc.dart';
 import 'package:building/blocs/menu/menu_event.dart';
 import 'package:building/models/user/settings.dart';
+import 'package:building/ui/report_page.dart';
+import 'package:building/ui/reports/report_detail_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,7 +32,10 @@ class MainMenuPage extends StatelessWidget {
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: (){
-                       BlocProvider.of<MenuBloc>(context).add(MenuClickedEvent(demo: state.demo,typeOfMainMenu: state.listOfMainMenuModel.elementAt(index).typeOfMainMenu));
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => ReportPage(),
+                    ));
+                     //  BlocProvider.of<MenuBloc>(context).add(MenuClickedEvent(demo: state.demo,typeOfMainMenu: state.listOfMainMenuModel.elementAt(index).typeOfMainMenu));
                   },
                   child: Container(
                     padding: EdgeInsets.all(8.0),
