@@ -1,4 +1,5 @@
 import 'package:building/models/user/connection_option.dart';
+import 'package:building/models/user/user.dart';
 import 'package:building/ui/registration/login_page.dart';
 import 'package:building/ui/registration/registration_page.dart';
 import 'package:building/util/constants.dart';
@@ -6,8 +7,9 @@ import 'package:flutter/material.dart';
 
 class MainRegPage extends StatefulWidget {
   final int initialIndex;
+  final User user;
   final ConnectionOption connectionOption;
-  const MainRegPage({Key key, this.connectionOption, this.initialIndex}) : super(key: key);
+  const MainRegPage({Key key, this.connectionOption, this.initialIndex, this.user}) : super(key: key);
   @override
   _MainRegPageState createState() => _MainRegPageState();
 }
@@ -17,10 +19,10 @@ class _MainRegPageState extends State<MainRegPage>{
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
-      initialIndex: 0,
+      initialIndex: (widget.initialIndex==null)?0:widget.initialIndex,
       child: new Scaffold(
         appBar: new AppBar(
-          leading: Container(),
+          leading:Container(),
           backgroundColor: CONSTANTS.mainBackgroundColor,
           flexibleSpace: new Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -41,7 +43,7 @@ class _MainRegPageState extends State<MainRegPage>{
                 child: new RegistrationPage(connectionOption: widget.connectionOption,)
             ),
             SingleChildScrollView(
-                child: new LoginPage(connectionOption: widget.connectionOption,)
+                child: new LoginPage(connectionOption: widget.connectionOption,user:widget.user ,)
             ),
           ],
         ),

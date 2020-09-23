@@ -9,12 +9,10 @@ class ReportDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: CONSTANTS.appbarBackgroundColor,
       ),
-
       body: ListView.builder(
           itemCount: 10,
           itemBuilder:(context, index){
             return ListTile(
-
                 title:Text("Организация",style: TextStyle(
                   color: CONSTANTS.appbarBackgroundColor,
                   fontWeight: FontWeight.bold,

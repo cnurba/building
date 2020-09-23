@@ -34,14 +34,64 @@ class MainMenuModel{
     _name = value;
   }
 
+  static List<MainMenuModel> addPropertiesToMenu(List<String> menuNames){
+       List<MainMenuModel> mainMenuList= [];
+       menuNames.forEach((menu) {
+         IconData iconData;
+         Color color;
+         TypeOfMainMenu typeOfMainMenu;
+
+         if(menu=="Отчеты"){
+           iconData = Icons.category;
+           color = CONSTANTS.mainBtnColor1;
+           typeOfMainMenu  = TypeOfMainMenu.report;
+         }else if(menu=="Дома"){
+           iconData = Icons.home;
+           color = CONSTANTS.mainBtnColor2;
+           typeOfMainMenu  = TypeOfMainMenu.home;
+         }else if(menu=="Долги по графику"){
+           iconData = Icons.folder_shared;
+           color = CONSTANTS.mainBtnColor3;
+           typeOfMainMenu  = TypeOfMainMenu.debtOnSchedule;
+         }else if(menu=="Задачи"){
+           iconData = Icons.transfer_within_a_station;
+           color = CONSTANTS.mainBtnColor4;
+           typeOfMainMenu  = TypeOfMainMenu.task;
+         }else if(menu=="Параметры подключения"){
+           iconData = Icons.http;
+           color = CONSTANTS.mainBtnColor5;
+           typeOfMainMenu  = TypeOfMainMenu.connection;
+         }else if(menu=="Пользователи"){
+           iconData = Icons.people_outline;
+           color = CONSTANTS.mainBackgroundColor;
+           typeOfMainMenu  = TypeOfMainMenu.users;
+         }else if(menu=="Синхронизация") {
+           iconData = Icons.donut_small;
+           color = CONSTANTS.mainBtnColor2;
+           typeOfMainMenu = TypeOfMainMenu.sync;
+         } else {
+           iconData = Icons.remove_circle;
+           color = Colors.red;
+           typeOfMainMenu = TypeOfMainMenu.other;
+         }
+
+         mainMenuList.add(new MainMenuModel(
+             menu,
+             iconData,
+             color,
+             typeOfMainMenu));
+       });
+
+    return mainMenuList;
+  }
+
   static List<MainMenuModel> getDemoData(){
     return [
       new MainMenuModel("Отчеты", Icons.category, CONSTANTS.mainBtnColor1,TypeOfMainMenu.report),
       new MainMenuModel("Дома", Icons.home, CONSTANTS.mainBtnColor2,TypeOfMainMenu.home),
       new MainMenuModel("Долги по графику", Icons.folder_shared, CONSTANTS.mainBtnColor3,TypeOfMainMenu.debtOnSchedule),
       new MainMenuModel("Задачи", Icons.transfer_within_a_station, CONSTANTS.mainBtnColor4,TypeOfMainMenu.task),
-      new MainMenuModel("Параметры подключения", Icons.http, CONSTANTS.mainBtnColor5,TypeOfMainMenu.connection),
-      new MainMenuModel("Settings", Icons.settings, CONSTANTS.mainBackgroundColor,TypeOfMainMenu.settings),
-    ];
+      new MainMenuModel("Пользователи", Icons.people_outline, CONSTANTS.mainBackgroundColor,TypeOfMainMenu.users),
+     ];
   }
 }

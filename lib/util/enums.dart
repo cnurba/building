@@ -8,7 +8,9 @@ enum TypeOfMainMenu{
   home,
   task,
   debtOnSchedule,
-  settings,
+  users,
   connection,
+  sync,
+  other
 }
 

@@ -1,6 +1,7 @@
 import 'package:building/blocs/connection/connect_bloc.dart';
 import 'package:building/blocs/connection/connect_event.dart';
 import 'package:building/models/user/connection_option.dart';
+import 'package:building/models/user/user.dart';
 import 'package:building/ui/main_menu.dart';
 import 'package:building/ui/registration/main_reg_page.dart';
 import 'package:building/util/constants.dart';
@@ -18,13 +19,14 @@ class _StartPageState extends State<StartPage> {
   Widget build(BuildContext context) {
     final connectBloc = BlocProvider.of<ConnectBloc>(context);
     double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
         onPressed: (){
           connectBloc.add(DemoConnectEvent());
           Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => MainMenuPage(),
+            builder: (context) => MainMenuPage(demo: true,),
           ));
         },
        backgroundColor: Colors.white,
@@ -56,9 +58,8 @@ class _StartPageState extends State<StartPage> {
               child: Center(
                 child: InkWell(
                   onTap: (){
-                    connectBloc.add(AppStartedEvent());
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => MainRegPage(connectionOption: ConnectionOption(),),
+                      builder: (context) => MainRegPage(connectionOption: ConnectionOption(),user: User(),initialIndex: 0,),
                     ));
                   },
                   radius: 40.0,

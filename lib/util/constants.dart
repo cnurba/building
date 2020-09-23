@@ -15,4 +15,10 @@ class CONSTANTS{
   static const String logoPath = 'assets/images/logo.png';
   static const String defaultImagePath = 'assets/images/default.png';
 
+  static const String settings ="Параметры подключения";
+  static const String synchronization ="Синхронизация";
+  static const String logout ="Выход";
+  static const List<String> choices=[settings,synchronization,logout];
+  static const List<String> demoChoices=[logout];
+
 }

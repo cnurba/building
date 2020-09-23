@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PreferenceHelper{
@@ -17,6 +16,11 @@ class PreferenceHelper{
   static remove(String key)async{
     final prefs = await SharedPreferences.getInstance();
     prefs.remove(key);
+  }
+
+  static containsKey(String key)async{
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.containsKey(key);
   }
 
 
